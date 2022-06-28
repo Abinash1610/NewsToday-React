@@ -27,7 +27,7 @@ export class News extends Component {
   }
 
   async componentDidMount(){
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2821867c08df416094d0127cf9b63b29&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2821867c08df416094d0127cf9b63b29&page=1&pageSize=${this.props.pageSize}`;
     this.setState({loading: true});
     let details = await fetch(url);
     let parsedData = await details.json();
@@ -35,7 +35,7 @@ export class News extends Component {
   }
 
   handlePrevClick = async ()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2821867c08df416094d0127cf9b63b29&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+    let url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2821867c08df416094d0127cf9b63b29&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     this.setState({loading: true});
     let details = await fetch(url);
     let parsedData = await details.json();
@@ -43,7 +43,7 @@ export class News extends Component {
   }
 
   handleNextClick = async ()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2821867c08df416094d0127cf9b63b29&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+    let url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2821867c08df416094d0127cf9b63b29&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
     this.setState({loading: true});
     let details = await fetch(url);
     let parsedData = await details.json();
